@@ -40,7 +40,7 @@ html {
 .hero {
   background: 
     linear-gradient(rgba(230, 225, 225, 0.39), rgba(230, 225, 225, 0.39)),
-    rgba(230, 225, 225, 0.39) url("/img/WhatsApp Image 2025-10-13 at 16.40.38.jpeg") no-repeat center center fixed;
+    rgba(230, 225, 225, 0.39) url("./img/WhatsApp Image 2025-10-13 at 16.40.38.jpeg") no-repeat center center fixed;
   background-size: cover;
   color: white;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
