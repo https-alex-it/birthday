@@ -40,12 +40,32 @@ html {
 .hero {
   background: 
     linear-gradient(rgba(230, 225, 225, 0.39), rgba(230, 225, 225, 0.39)),
-    rgba(230, 225, 225, 0.39) url("./img/WhatsApp Image 2025-10-13 at 16.40.38.jpeg") no-repeat center center fixed;
-  background-size: cover;
+    url("/WhatsApp Image 2025-10-13 at 16.40.38.jpeg") no-repeat center center;
+  background-size: cover; /* Copre sempre tutto il contenitore */
+  background-attachment: scroll; /* Cambiato da fixed per mobile, miglior performance */
   color: white;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   font-family: 'Raleway', sans-serif;
 }
+
+/* Ottimizzazione per smartphone */
+@media (max-width: 768px) {
+  .hero {
+    background-position: center top; /* centra la parte più importante dell'immagine */
+    background-size: cover; /* mantiene proporzioni senza deformare */
+  }
+}
+
+/* Ottimizzazione per schermi molto piccoli */
+@media (max-width: 480px) {
+  .hero {
+    background-position: center top;
+    background-size: cover;
+    padding-top: 100px; /* aumenta spazio se serve per testo leggibile */
+    padding-bottom: 100px;
+  }
+}
+
 
 
 
@@ -563,59 +583,6 @@ body.preloader-site {
   border-radius: 10px;
 }
 
-
-.foto1 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-kang-emil.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-
-.foto2 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-cashbac.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-.foto3 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-selfie.jpg");
-  background-size: cover;
-  background-position: top;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-.foto4 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-lamaran.jpg");
-  background-size: cover;
-  background-position: top;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-.foto5 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-red-car.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-
-.foto6 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/sherly-daeng-engagement-ami.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  min-height: 24rem;
-}
-
-
-
 .title-foto {
   font-size: 18pt;
   font-family: 'Lato', sans-serif;
@@ -624,7 +591,17 @@ body.preloader-site {
   color: white;
 }
 
+/* Rimuove il padding del container e fa occupare tutta la larghezza */
+#tentang-serena .container {
+  max-width: 100%;   /* container occupa tutta la larghezza */
+  padding-left: 20px; /* piccola spaziatura laterale */
+  padding-right: 20px;
+}
 
+#tentang-serena {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
 .subtitle-foto {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
@@ -676,4 +653,56 @@ body.preloader-site {
 
 .floating-whatsapp:hover {
   transform: scale(1.1);
+}
+#dresscode {
+  padding-top: 100px;   /* più spazio sopra */
+  padding-bottom: 100px; /* più spazio sotto */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra tutto orizzontalmente */
+  justify-content: center; /* centra verticalmente se necessario */
+}
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(14, 25, 80, 0.15);
+  transition: transform 0.2s;
+  color: #43485c; /* testo leggibile */
+  text-align: center; /* centra tutto il contenuto */
+}
+
+.glass-effect h3.title-foto {
+  font-size: 24px;
+  color: #6d8099; 
+  margin-bottom: 15px;
+  text-align: center; /* titolo centrato */
+}
+
+.glass-effect p.bodytext {
+  font-size: 16px;
+  color: #43485c;
+  text-align: center; /* testo centrato */
+}
+
+
+/* Mobile */
+@media (max-width: 599px) {
+  #dresscode .columns {
+    flex-direction: column; /* impila le colonne */
+    align-items: center;    /* centra le colonne */
+    justify-content: flex-start; /* mantiene un po’ di spazio sopra */
+    width: 100%;
+  }
+
+  #dresscode .column {
+    width: 100%; /* occupano tutta la larghezza su mobile */
+    max-width: 320px; /* larghezza massima */
+  }
+
+  #dresscode .tile.box {
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
