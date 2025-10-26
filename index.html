@@ -27,91 +27,53 @@
     </div>
 
     <!-- Header -->
-    <div class="header-wrapper" id="home">
-      <section class="hero is-large">
-        <!-- Menu Mobile -->
-        <nav class="navbar is-transparent is-hidden-desktop">
-          <div class="navbar-brand">
-            <div class="navbar-burger burger" data-target="mobile-nav">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <div id="mobile-nav" class="navbar-menu">
-            <div class="navbar-end">
-              <div class="navbar-item">
-                <a class="navbar-item" href="#Waktu">Dress Code</a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#lokasi">Dove</a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#tentang-serena">ci sarai?</a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#rsvp">Carica le tue foto</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-
-        <!-- Contenuto principale -->
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <h1 class="subtitle">Sei invitato al</h1>
-            <h2 class="title">18° Compleanno di Serena</h2>
-            <h4 class="subtitle tempatwaktu">
-              Sabato, 14 Febbraio 2026 <br />
-              Agriturismo Sanacore, Str. Quartana 7 <br />
-              91100 Guarrato (TP)
-            </h4>
-          </div>
-
-          <!-- Countdown -->
-          <div>
-            <ul id="hitungmundur">
-              <li><span class="days">00</span><p class="days_text">Giorni</p></li>
-              <li class="separator">:</li>
-              <li><span class="hours">00</span><p class="hours_text">Ore</p></li>
-              <li class="separator">:</li>
-              <li><span class="minutes">00</span><p class="minutes_text">Minuti</p></li>
-              <li class="separator">:</li>
-              <li><span class="seconds">00</span><p class="seconds_text">Secondi</p></li>
-            </ul>
-
-            <script type="text/javascript">
-              var harih = '02/14/2026 20:00:00';
-              $('#hitungmundur').countdown({
-                date: harih,
-                offset: +2,
-                day: 'Giorno',
-                days: 'Giorni'
-              }, function () {
-                alert('È il grande giorno!');
-              });
-            </script>
+    <section class="hero is-large" id="home">
+      <!-- Navbar Mobile -->
+      <nav class="navbar is-transparent is-hidden-desktop">
+        <div class="navbar-brand">
+          <div class="navbar-burger burger" data-target="mobile-nav">
+            <span></span><span></span><span></span>
           </div>
         </div>
-
-        <!-- Menu desktop -->
-        <div class="hero-foot">
-          <div class="hero-foot--wrapper">
-            <div class="columns">
-              <div class="column is-12 hero-menu-desktop has-text-centered">
-                <ul>
-                  <li class="is-active"><a href="#home">Home</a></li>
-                  <li><a href="#Waktu">Dress Code</a></li>
-                  <li><a href="#lokasi">Dove</a></li>
-                  <li><a href="#tentang-serena">Parteciperai?</a></li>
-                  <li><a href="#rsvp">Carica le tue foto</a></li>
-                </ul>
-              </div>
+        <div id="mobile-nav" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="#dresscode">Dress Code</a>
+            <a class="navbar-item" href="#lokasi">Dove</a>
+            <a class="navbar-item" href="#tentang-serena">Parteciperai?</a>
+            <a class="navbar-item" href="#foto">Carica le tue foto</a>
+          </div>
+        </div>
+      </nav>
+  
+      <!-- Hero Content -->
+      <div class="hero-body has-text-centered">
+        <h1 class="subtitle">Sei invitato al</h1>
+        <h2 class="title">18° Compleanno di Serena</h2>
+        <h4 class="subtitle tempatwaktu">
+          Sabato, 14 Febbraio 2026 <br />
+          Agriturismo Sanacore, Str. Quartana 7 <br />
+          91100 Guarrato (TP)
+        </h4>
+      </div>
+  
+      <!-- Navbar Desktop -->
+      <div class="hero-foot">
+        <div class="hero-foot--wrapper">
+          <div class="columns">
+            <div class="column is-12 hero-menu-desktop has-text-centered">
+              <ul>
+                <li class="is-active"><a href="#home">Home</a></li>
+                <li><a href="#dresscode">Dress Code</a></li>
+                <li><a href="#lokasi">Dove</a></li>
+                <li><a href="#tentang-serena">Parteciperai?</a></li>
+                <li><a href="#foto">Carica le tue foto</a></li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+  
 
     <!-- Contenuto principale -->
     <div class="main-content">
