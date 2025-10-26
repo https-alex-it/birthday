@@ -749,24 +749,7 @@ body.preloader-site {
   transform: scale(1.03);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  #dresscode .columns {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  #dresscode .column {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .lista-dresscode {
-    text-align: center;
-    padding-left: 0;
-    list-style-position: inside;
-  }
-}
 /* --- Dress Code --- */
 .dresscode-box {
   display: flex;
@@ -788,8 +771,36 @@ body.preloader-site {
   margin: 0.5rem 0;
 }
 
-/* Mobile centering */
 @media (max-width: 768px) {
+  .hero {
+    padding: 80px 15px;
+    background-position: center top;
+  }
+
+  .hero .title {
+    font-size: 2.6rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1rem;
+  }
+
+  .columns {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .lista-dresscode {
+    text-align: center;
+    padding-left: 0;
+    list-style-position: inside;
+  }
+
+  .hero-foot {
+    display: none; /* Nasconde la navbar desktop su mobile */
+  }
+
+  
   .columns.is-multiline {
     justify-content: center !important;
   }
@@ -798,4 +809,9 @@ body.preloader-site {
     width: 100%;
     text-align: center;
   }
+}
+@media (max-width: 480px) {
+  .hero .title { font-size: 2.2rem; }
+  .hero .subtitle { font-size: 0.95rem; }
+  #dresscode { padding: 60px 10px; }
 }
