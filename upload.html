@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carica le foto - 18° Serena</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Rouge+Script" rel="stylesheet">
+
+  <!-- Bulma -->
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css">
+
+  <!-- Cloudinary Widget -->
+  <script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
+
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(rgba(230,225,225,0.4), rgba(230,225,225,0.4)),
+                  url("img/WhatsAppImage.jpeg") no-repeat center center;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .upload-box {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(8px);
+      padding: 60px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .title-script {
+      font-family: 'Rouge Script', cursive;
+      font-size: 3rem;
+      color: #6d8099;
+    }
+
+    .upload-button {
+      background-color: #6d8099;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .upload-button:hover {
+      background-color: #bf7877;
+      transform: scale(1.05);
+    }
+
+    .success-message {
+      margin-top: 20px;
+      font-weight: 600;
+      color: #6d8099;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="upload-box">
+    <h1 class="title-script">18° Serena</h1>
+    <p style="margin-top:10px; font-size:1.1rem;">
+      📸 Carica qui le foto di questa giornata speciale
+    </p>
+
+    <button id="upload_widget" class="upload-button">
+      Carica le tue foto
+    </button>
+
+    <div id="success" class="success-message"></div>
+  </div>
+
+  <script>
+    const myWidget = cloudinary.createUploadWidget(
+      {
+        cloudName: "ddhvazvht",
+        uploadPreset: "default_unsigned",
+        folder: "compleanno_serena",
+        multiple: true,
+        maxFileSize: 5000000,
+        clientAllowedFormats: ["jpg", "png", "jpeg"],
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          document.getElementById("success").innerHTML =
+            "🎉 Foto caricata con successo!";
+        }
+      }
+    );
+
+    document.getElementById("upload_widget").addEventListener("click", function () {
+      myWidget.open();
+    }, false);
+  </script>
+
+</body>
+</html>
